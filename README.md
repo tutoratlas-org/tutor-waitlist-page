@@ -6,7 +6,7 @@ Static tutor-facing waitlist page. British English. No framework, no build step,
 
 ## Deploy
 
-GitHub Pages, from the `tutoratlas/tutor-waitlist-page` repo. Push to the default branch and Pages serves it. There is no build: the files in this repo are the files on the host.
+GitHub Pages, from the `tutoratlas-org/tutor-waitlist-page` repo. Push to the default branch and Pages serves it. There is no build: the files in this repo are the files on the host.
 
 `CNAME` holds the custom domain `tutor.tutoratlas.sg`. Do not delete it — Pages drops the custom domain if that file goes missing.
 
@@ -54,7 +54,7 @@ After this change merges, launch still needs GitHub Pages deployment, crawlabili
 Repeat these before the final walkthrough and again immediately after GitHub Pages deploys this merge:
 
 ```bash
-gh-axi api /repos/tutoratlas/tutor-waitlist-page/pages
+gh-axi api /repos/tutoratlas-org/tutor-waitlist-page/pages
 curl -sSIL https://tutor.tutoratlas.sg/ \
   https://tutor.tutoratlas.sg/privacy.html \
   https://tutor.tutoratlas.sg/terms.html \
