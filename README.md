@@ -93,7 +93,7 @@ Do not reintroduce a bare `.reveal { opacity: 0 }`.
 
 The observer's `threshold` must stay `0`. A section taller than `viewport / threshold` can never expose that fraction of itself at once and stays hidden forever. Under the old `0.18` this was not theoretical: at 360x400 the two tallest sections measure ~2473px and ~2377px against a 2222px ceiling, and were verified stuck at `opacity: 0` after a full scroll. The `rootMargin`, not the threshold, is what paces the trigger.
 
-The tagline observer still uses `threshold: 0.45`. That was measured at the same viewports — 0.19 max ratio against a 2.22 ceiling — and is fine.
+The problem-section tagline bridge was removed. The `[data-tagline]` observer in `script.js` still uses `threshold: 0.45` if that element exists.
 
 ## Form: Basin waitlist
 
@@ -121,7 +121,7 @@ Production Basin setup for this form is an external launch readiness check:
 
 - Form: Tutor Atlas waitlist, endpoint above.
 - Retention: set the Basin form/submission retention to **365 days**.
-- DPA/terms posture: reflected in `privacy.html`; Basin is the form processor and its DPA is part of Basin's terms.
+- DPA/terms posture: reflected in `privacy.html`; Basin is the form processor and its DPA is part of Basin's terms. The home-page consent checkbox copy and its links stay as they are (JH, TUT-113, 22 Sep 2026). JH's locked waitlist sentences in `privacy.html` and `terms.html` stay verbatim. Later sections on those pages describe the assistant when a tutor uses it; they do not replace the waitlist terms.
 
 This repository cannot verify the Basin dashboard setting. Before treating the form as production-ready, log in to Basin and confirm the `0184c01ee34e` form retention is set to 365 days. Do not claim that dashboard setting is configured from repository evidence alone.
 
@@ -138,8 +138,8 @@ Manual deletion procedure:
 | File | Role |
 |---|---|
 | `index.html` | Page |
-| `privacy.html` | Waitlist-only privacy notice |
-| `terms.html` | Short waitlist terms |
+| `privacy.html` | Privacy notice: waitlist today, assistant when used |
+| `terms.html` | Waitlist terms, plus assistant terms when used |
 | `styles.css` | Layout and tokens |
 | `script.js` | Nav, reveals, Basin form validation/submission |
 | `robots.txt` | Crawl allowlist and canonical sitemap reference |

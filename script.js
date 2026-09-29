@@ -212,7 +212,7 @@
         }
       } catch (error) {
         setSubmitting(false);
-        setStatus("We could not confirm Basin received this. Your details are still here — please try again, or email hello@tutoratlas.sg if it keeps failing.", true);
+        setStatus("We could not confirm Basin received this. Your details are still here, so please try again, or email hello@tutoratlas.sg if it keeps failing.", true);
       }
     });
   }
