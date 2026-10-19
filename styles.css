@@ -1274,7 +1274,8 @@ summary,
   margin: 0;
 }
 
-.problem-points {
+.problem-points,
+.trust-points {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1282,16 +1283,35 @@ summary,
   gap: var(--space-75);
 }
 
+.trust-points {
+  margin-top: var(--space-200);
+  max-width: 42rem;
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  line-height: 1.65rem;
+  gap: var(--space-100);
+}
+
+.trust-points li::before {
+  top: 0.65rem;
+}
+
+.trust-points strong {
+  color: var(--text);
+}
+
 .section-lead .problem-points {
   margin: 0.65em 0;
 }
 
-.problem-points li {
+.problem-points li,
+.trust-points li {
   position: relative;
   padding-left: 1.25rem;
 }
 
-.problem-points li::before {
+.problem-points li::before,
+.trust-points li::before {
   content: "";
   position: absolute;
   left: 0.1rem;
@@ -1709,6 +1729,17 @@ summary,
 
 .problem-grid li {
   padding-bottom: 0.15rem;
+}
+
+.cta-link {
+  color: var(--accent-hot);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.cta-link:hover {
+  color: var(--text);
 }
 
 @media (min-width: 700px) {
