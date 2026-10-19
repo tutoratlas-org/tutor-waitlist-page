@@ -1614,6 +1614,49 @@ summary,
   overflow-wrap: anywhere;
 }
 
+.benefit-points {
+  list-style: none;
+  margin: var(--space-100) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-75);
+}
+
+@media (min-width: 700px) {
+  .benefit-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-75) var(--space-300);
+  }
+}
+
+.benefit-list .benefit-points li {
+  position: relative;
+  padding: 0 0 0 1.25rem;
+  border: 0;
+  background: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.45rem;
+}
+
+.benefit-list .benefit-points li::before {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  top: 0.5rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--accent-bright);
+  box-shadow: 0 0 8px rgba(232, 192, 122, 0.45);
+}
+
+.benefit-list .benefit-note {
+  margin-top: var(--space-100);
+  color: var(--text);
+  font-weight: 600;
+}
+
 .benefit-list li {
   padding: var(--space-300);
   padding-bottom: calc(var(--space-300) + 0.15rem);
