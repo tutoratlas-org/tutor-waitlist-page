@@ -1274,6 +1274,35 @@ summary,
   margin: 0;
 }
 
+.problem-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-75);
+}
+
+.section-lead .problem-points {
+  margin: 0.65em 0;
+}
+
+.problem-points li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.problem-points li::before {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  top: 0.55rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--accent-bright);
+  box-shadow: 0 0 8px rgba(232, 192, 122, 0.45);
+}
+
 .channel-fragment {
   margin: var(--space-500) 0 0;
   border-radius: calc(var(--radius-2xl) + 2px);
@@ -1426,6 +1455,19 @@ summary,
 @media (max-width: 699px) {
   .channel-fragment-body {
     flex-direction: column;
+  }
+
+  .channel-fragment .scene-feature-chrome {
+    flex-wrap: wrap;
+    row-gap: var(--space-50);
+  }
+
+  .channel-fragment .scene-feature-title {
+    flex: 1 1 auto;
+    max-width: none;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
   }
 
   .channel-arrow {
