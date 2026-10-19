@@ -1275,7 +1275,7 @@ summary,
 }
 
 .channel-fragment {
-  margin: 0;
+  margin: var(--space-500) 0 0;
   border-radius: calc(var(--radius-2xl) + 2px);
   border: 1px solid var(--glass-border);
   background: rgba(10, 16, 24, 0.55);
@@ -1396,7 +1396,7 @@ summary,
 
 .channel-fragment-caption {
   margin: 0;
-  padding: 0.65rem var(--space-300) var(--space-250);
+  padding: 0.65rem var(--space-300) var(--space-200);
   border-top: 1px solid rgba(255, 255, 255, 0.04);
   font-size: 0.8125rem;
   line-height: 1.35;
@@ -2249,7 +2249,8 @@ summary,
     line-height: 1.65rem;
   }
 
-  .scene-feature {
+  .scene-feature,
+  .channel-fragment {
     margin-top: var(--space-400);
   }
 
