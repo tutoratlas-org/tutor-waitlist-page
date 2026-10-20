@@ -1274,8 +1274,57 @@ summary,
   margin: 0;
 }
 
-.channel-fragment {
+.problem-points,
+.trust-points {
+  list-style: none;
   margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-75);
+}
+
+.trust-points {
+  margin-top: var(--space-200);
+  max-width: 42rem;
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  line-height: 1.65rem;
+  gap: var(--space-100);
+}
+
+.trust-points li::before {
+  top: 0.65rem;
+}
+
+.trust-points strong {
+  color: var(--text);
+}
+
+.section-lead .problem-points {
+  margin: 0.65em 0;
+}
+
+.problem-points li,
+.trust-points li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.problem-points li::before,
+.trust-points li::before {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  top: 0.55rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--accent-bright);
+  box-shadow: 0 0 8px rgba(232, 192, 122, 0.45);
+}
+
+.channel-fragment {
+  margin: var(--space-500) 0 0;
   border-radius: calc(var(--radius-2xl) + 2px);
   border: 1px solid var(--glass-border);
   background: rgba(10, 16, 24, 0.55);
@@ -1396,7 +1445,7 @@ summary,
 
 .channel-fragment-caption {
   margin: 0;
-  padding: 0.65rem var(--space-300) var(--space-250);
+  padding: 0.65rem var(--space-300) var(--space-200);
   border-top: 1px solid rgba(255, 255, 255, 0.04);
   font-size: 0.8125rem;
   line-height: 1.35;
@@ -1426,6 +1475,19 @@ summary,
 @media (max-width: 699px) {
   .channel-fragment-body {
     flex-direction: column;
+  }
+
+  .channel-fragment .scene-feature-chrome {
+    flex-wrap: wrap;
+    row-gap: var(--space-50);
+  }
+
+  .channel-fragment .scene-feature-title {
+    flex: 1 1 auto;
+    max-width: none;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
   }
 
   .channel-arrow {
@@ -1614,6 +1676,49 @@ summary,
   overflow-wrap: anywhere;
 }
 
+.benefit-points {
+  list-style: none;
+  margin: var(--space-100) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-75);
+}
+
+@media (min-width: 700px) {
+  .benefit-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-75) var(--space-300);
+  }
+}
+
+.benefit-list .benefit-points li {
+  position: relative;
+  padding: 0 0 0 1.25rem;
+  border: 0;
+  background: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.45rem;
+}
+
+.benefit-list .benefit-points li::before {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  top: 0.5rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--accent-bright);
+  box-shadow: 0 0 8px rgba(232, 192, 122, 0.45);
+}
+
+.benefit-list .benefit-note {
+  margin-top: var(--space-100);
+  color: var(--text);
+  font-weight: 600;
+}
+
 .benefit-list li {
   padding: var(--space-300);
   padding-bottom: calc(var(--space-300) + 0.15rem);
@@ -1624,6 +1729,17 @@ summary,
 
 .problem-grid li {
   padding-bottom: 0.15rem;
+}
+
+.cta-link {
+  color: var(--accent-hot);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.cta-link:hover {
+  color: var(--text);
 }
 
 @media (min-width: 700px) {
@@ -2249,7 +2365,8 @@ summary,
     line-height: 1.65rem;
   }
 
-  .scene-feature {
+  .scene-feature,
+  .channel-fragment {
     margin-top: var(--space-400);
   }
 
