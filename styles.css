@@ -1253,6 +1253,7 @@ summary,
 }
 
 .problem-channels h3 {
+  text-align: left;
   margin: 0 0 var(--space-150);
   font-size: clamp(1.2rem, 2.8vw, 1.45rem);
   line-height: 1.35;
@@ -2427,8 +2428,7 @@ summary,
   }
 
   .section h2,
-  .intro-block h2,
-  .problem-channels h3 {
+  .intro-block h2 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
