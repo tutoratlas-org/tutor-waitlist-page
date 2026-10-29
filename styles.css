@@ -1253,6 +1253,7 @@ summary,
 }
 
 .problem-channels h3 {
+  text-align: left;
   margin: 0 0 var(--space-150);
   font-size: clamp(1.2rem, 2.8vw, 1.45rem);
   line-height: 1.35;
@@ -2196,6 +2197,21 @@ summary,
   color: var(--text-muted);
 }
 
+.section-cta {
+  margin-top: var(--space-500);
+  display: flex;
+}
+
+@media (max-width: 599px) {
+  .section-cta {
+    justify-content: center;
+  }
+
+  .section-cta .btn-primary {
+    width: min(100%, 20rem);
+  }
+}
+
 /* FAQ */
 .faq-list {
   margin: var(--space-500) auto 0;
@@ -2219,6 +2235,10 @@ summary,
 }
 
 .faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-200);
   cursor: pointer;
   list-style: none;
   padding: var(--space-300) 0;
@@ -2229,6 +2249,29 @@ summary,
 
 .faq-item summary::-webkit-details-marker {
   display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  color: var(--accent-bright);
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: transform 400ms var(--ease-fluid), background-color 400ms var(--ease-fluid);
+}
+
+.faq-item summary:hover::after {
+  background: rgba(232, 192, 122, 0.12);
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
 }
 
 .faq-item p {
@@ -2356,6 +2399,10 @@ summary,
 
 /* Mobile: keep scenes readable, no crop / no illegible SVG micro-type */
 @media (max-width: 599px) {
+  .beams {
+    display: none;
+  }
+
   .section {
     padding: var(--space-700) var(--space-200);
   }
@@ -2400,8 +2447,7 @@ summary,
   }
 
   .section h2,
-  .intro-block h2,
-  .problem-channels h3 {
+  .intro-block h2 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
