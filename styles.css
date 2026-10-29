@@ -2197,6 +2197,21 @@ summary,
   color: var(--text-muted);
 }
 
+.section-cta {
+  margin-top: var(--space-500);
+  display: flex;
+}
+
+@media (max-width: 599px) {
+  .section-cta {
+    justify-content: center;
+  }
+
+  .section-cta .btn-primary {
+    width: min(100%, 20rem);
+  }
+}
+
 /* FAQ */
 .faq-list {
   margin: var(--space-500) auto 0;
