@@ -2219,6 +2219,10 @@ summary,
 }
 
 .faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-200);
   cursor: pointer;
   list-style: none;
   padding: var(--space-300) 0;
@@ -2229,6 +2233,29 @@ summary,
 
 .faq-item summary::-webkit-details-marker {
   display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  color: var(--accent-bright);
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: transform 400ms var(--ease-fluid), background-color 400ms var(--ease-fluid);
+}
+
+.faq-item summary:hover::after {
+  background: rgba(232, 192, 122, 0.12);
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
 }
 
 .faq-item p {
