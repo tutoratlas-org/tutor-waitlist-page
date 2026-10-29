@@ -2384,6 +2384,10 @@ summary,
 
 /* Mobile: keep scenes readable, no crop / no illegible SVG micro-type */
 @media (max-width: 599px) {
+  .beams {
+    display: none;
+  }
+
   .section {
     padding: var(--space-700) var(--space-200);
   }
